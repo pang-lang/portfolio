@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
-import GuestTypewriter from '../components/Typewriter';
+import GuestTypewriter from '../components/GuestTypewriter';
 
 const Contacts = () => {
     const [formData, setFormData] = useState({ name: '', email: '', website: '', message: '' });
