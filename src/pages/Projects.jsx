@@ -29,7 +29,7 @@ const Projects = () => {
     const competitions = [
         {
             title: 'Chin Hin AI Hackathon', award: '3rd Place', date: 'Mar 2026', icon: '🥉',
-            relatedProjectTitle: '',
+            relatedProjectTitles: ['Seamless Employee App Experience', 'AI Customer Success Guardian'],
             photos: ['/assets/chinhin/1.webp', '/assets/chinhin/2.webp', '/assets/chinhin/3.webp', '/assets/chinhin/4.webp']
         },
         {
@@ -550,14 +550,26 @@ const Projects = () => {
                                 ))}
                             </div>
 
-                            {selectedCompetition.relatedProjectTitle && (
-                                <div style={{ marginTop: '2.5rem', display: 'flex', justifyContent: 'center' }}>
-                                    <button
-                                        className="btn-primary"
-                                        onClick={() => handleViewRelatedProject(selectedCompetition.relatedProjectTitle)}
-                                    >
-                                        View Project: {selectedCompetition.relatedProjectTitle} <ArrowRight size={18} />
-                                    </button>
+                            {(selectedCompetition.relatedProjectTitle || selectedCompetition.relatedProjectTitles) && (
+                                <div style={{ marginTop: '2.5rem', display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
+                                    {selectedCompetition.relatedProjectTitles ? (
+                                        selectedCompetition.relatedProjectTitles.map((title, idx) => (
+                                            <button
+                                                key={idx}
+                                                className="btn-primary"
+                                                onClick={() => handleViewRelatedProject(title)}
+                                            >
+                                                View Project: {title} <ArrowRight size={18} />
+                                            </button>
+                                        ))
+                                    ) : (
+                                        <button
+                                            className="btn-primary"
+                                            onClick={() => handleViewRelatedProject(selectedCompetition.relatedProjectTitle)}
+                                        >
+                                            View Project: {selectedCompetition.relatedProjectTitle} <ArrowRight size={18} />
+                                        </button>
+                                    )}
                                 </div>
                             )}
                         </div>
