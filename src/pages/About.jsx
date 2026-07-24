@@ -213,7 +213,7 @@ const About = () => {
                             fontWeight: 500,
                             margin: 0
                         }}>
-                            🚀 Currently seeking part-time or remote roles in Data, AI, or Machine Learning.
+                            🚀 Currently seeking for internship opportunities in Data, AI, or Machine Learning.
                         </p>
                         <a 
                             href="/resume.pdf" 
